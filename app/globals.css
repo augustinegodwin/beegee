@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #FCFCFC;
+  --green:#45D178;
+  --primary:#000000;
+  --secondary:#888888;
+  --warning:#D14558;
+  --success:#45D178;
+  --card:#F5F5F5;
+  
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+@font-face {
+  font-family: custom;
+  src: url(./assets/fonts/Boris.ttf);
+} 
+.title-font{
+  font-family: custom ; 
+}
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+.tracking-header{
+  @apply tracking-[-0.04em]
+}
+.tracking-body{
+  @apply tracking-[-0.04em]
+}
+.leading-body{
+  @apply leading-[1.4em]
+}
+.link-style{
+  @apply text-(--green)
+}
