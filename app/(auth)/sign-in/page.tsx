@@ -38,7 +38,7 @@ export default function Page() {
             </div>
         </div>
         <div className="py-3 flex justify-center">
-            <p className="leading-body title-font track-body font-medium text-(--secondary)">Don't have an account? <Link href={"/sign-up"} className="link-style">Sign up</Link>.</p>
+            <p className="leading-body text-sm title-font track-body font-medium text-(--secondary)">Don't have an account? <Link href={"/sign-up"} className="link-style">Sign up</Link>.</p>
         </div>
       </div>
     </div>
