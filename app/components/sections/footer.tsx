@@ -10,7 +10,7 @@ export default function Footer() {
         <div className="py-25 flex gap-10 flex-col lg:flex-row items-center">
           <div className="flex-1 gap-4  ">
             <div className="w-full max-w-100">
-              <p className="text-lg  text-center lg:text-left text-(--secondary) leading-body font-medium tracking-body">
+              <p className="text-lg  text-center title-font lg:text-left text-(--secondary) leading-body font-medium tracking-body">
                 Buy ,Sell, Rent your perfect marketplace
               </p>
               

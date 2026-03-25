@@ -16,7 +16,7 @@ export default function SectionHeader(data: SHProp) {
           </h2>
         </div>
         <div className="w-full max-w-100 flex flex-col justify-center items-center gap-5">
-          <p className="text-center text-lg text-(--secondary) leading-body font-medium tracking-body">
+          <p className="text-center text-lg text-(--secondary) leading-body title-font font-medium tracking-body">
             {data.body}
           </p>
           {data.buttonValue ? (
