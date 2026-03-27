@@ -3,6 +3,11 @@ import bot from "@/app/assets/images/user.jpg";
 import Image from "next/image";
 import Input from "@/app/components/utils/input";
 import FilterCard from "@/app/components/utils/filterCard";
+import { Geist, Geist_Mono } from "next/font/google";
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
 
 export default function Page() {
   return (
@@ -25,8 +30,8 @@ export default function Page() {
                   <FilterCard active={false} title="Additional Settings" />
                 </div>
               </div>
-              <div className="flex-1 ">
-                <div className="w-full py-5 px-1 flex flex-col gap-5 lg:gap-10">
+              {/* <div className="flex-1 ">
+                <div className="w-full py-5 px-1 flex flex-col gap-5 sm:gap-10">
                   <>
                     <section className="w-full grid gap-x-8 gap-y-6 sm:grid-cols-2">
                     <div className="space-y-1">
@@ -126,20 +131,32 @@ export default function Page() {
                   </div>
                   </>
                 </div>
-              </div>
-              {/* <div className="flex-1 flex flex-col gap-5">
-                <div className="flex-1 flex flex-row gap-5">
-                  <div className="flex-1 h-fit bg-(--card) rounded-[30px]  border border-gray-100 p-1.5">
-                    <div className="w-full h-50 p-5 bg-[#fcfcfc] border border-gray-100 rounded-3xl flex flex-col gap-10"></div>
-                  </div>
-                  <div className="flex-1 h-fit bg-(--card) rounded-[30px]  border border-gray-100 p-1.5">
-                    <div className="w-full h-50 p-5 bg-[#fcfcfc] border border-gray-100 rounded-3xl flex flex-col gap-10"></div>
-                  </div>
-                  <div className="flex-1 h-fit bg-(--card) rounded-[30px]  border border-gray-100 p-1.5">
-                    <div className="w-full h-50 p-5 bg-[#fcfcfc] border border-gray-100 rounded-3xl flex flex-col gap-10"></div>
-                  </div>
-                </div>
               </div> */}
+              <div className="flex-1 flex flex-col gap-5">
+                <div className="flex-1 flex flex-row gap-5">
+                  <div className="flex-1 h-fit bg-(--card) rounded-[30px]   border border-gray-200 p-1.5">
+                    <div className="py-2 px-5">
+                      <p className='text-base text-center leading-5 text-(--secondary) title-font'>Account</p>
+                    </div>
+                    <div className="w-full h-fit p-5 bg-(--green) border border-(--green) rounded-3xl justify-center flex flex-col gap-10">
+                      <h2 className={` ${geistMono.className} text-center font-font-geist-mono font-black text-3xl lg:text-[48px] text-white leading-none tracking-[-0.06em]`}>
+                    00.00
+                  </h2>
+                    </div>
+                  </div>
+                  <div className="flex-1 h-fit bg-(--card) rounded-[30px]  border border-gray-200 p-1.5">
+                    <div className="py-2 px-5">
+                      <p className='text-base text-center leading-5 text-(--secondary) title-font'>Dept Owing</p>
+                    </div>
+                    <div className="w-full h-fit p-5 bg-[#fcfcfc] border border-gray-200 rounded-3xl flex flex-col gap-10">
+                      <h2 className={` ${geistMono.className} text-center font-font-geist-mono font-black text-3xl lg:text-[48px] text-black leading-none tracking-[-0.06em]`}>
+                    00.00
+                  </h2>
+                    </div>
+                  </div>
+                 
+                </div>
+              </div>
             </div>
           </div>
         </div>
