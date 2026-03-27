@@ -1,15 +1,20 @@
+"use client"
 import MaxWidthContainer from "@/app/components/utils/maxWidthContainer";
 import bot from "@/app/assets/images/user.jpg";
 import Image from "next/image";
 import Input from "@/app/components/utils/input";
 import FilterCard from "@/app/components/utils/filterCard";
 import { Geist, Geist_Mono } from "next/font/google";
+import { useState } from "react";
+import Button from "@/app/components/utils/button";
+import AuthButton from "@/app/components/utils/authButton";
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
 
 export default function Page() {
+  const [activeTab, setActiveTab] = useState(2);
   return (
     <MaxWidthContainer>
       <div className="w-full py-25 ">
@@ -30,7 +35,8 @@ export default function Page() {
                   <FilterCard active={false} title="Additional Settings" />
                 </div>
               </div>
-              {/* <div className="flex-1 ">
+              {
+                activeTab===1 && <div className="flex-1 ">
                 <div className="w-full py-5 px-1 flex flex-col gap-5 sm:gap-10">
                   <>
                     <section className="w-full grid gap-x-8 gap-y-6 sm:grid-cols-2">
@@ -131,32 +137,48 @@ export default function Page() {
                   </div>
                   </>
                 </div>
-              </div> */}
-              <div className="flex-1 flex flex-col gap-5">
+              </div>
+              }
+              {
+                activeTab ===2 && <div className="flex-1 flex flex-col gap-5">
                 <div className="flex-1 flex flex-col sm:flex-row gap-5">
-                  <div className="flex-1 h-fit bg-(--card) rounded-[30px]  border border-gray-200 p-1.5">
+                  <div className="flex-1 h-fit bg-(--card) rounded-[30px] bg-(--green) border border-gray-200 p-1.5">
                     <div className="py-2 px-5">
-                      <p className='text-base text-center leading-5 text-(--secondary) title-font'>Account balance</p>
+                      <p className='text-base text-center leading-5 text-white title-font'>Account balance</p>
                     </div>
-                    <div className="w-full h-fit p-5 bg-(--green) border border-(--green) rounded-3xl justify-center flex flex-col gap-10">
-                      <h2 className={` ${geistMono.className} text-center font-font-geist-mono font-black text-3xl lg:text-[48px] text-white leading-none tracking-[-0.06em]`}>
-                    N100,000
+                    <div className="w-full h-fit p-5 bg-white items-center border border-(--green) rounded-3xl justify-center flex flex-col gap-5">
+                      <div className="flex jusify-center w-fit items-center flex-row gap-2">
+                        <p className='text-base w-fit text-center leading-5 text-(--secondary) title-font'>NGN</p>
+                        <h2 className={` text-center w-fit atwtts text-3xl lg:text-[48px] text-black leading-none tracking-[-0.01em]`}>
+                    100,000
                   </h2>
+                      </div>
+                  <button className="w-full px-5 py-3 title-font bg-black transition-all rounded-xl font-medium leading-[1.1] tracking-body text-sm text-white ">
+      Request Withdraw
+    </button>
                     </div>
                   </div>
-                  <div className="flex-1 h-fit bg-(--card) rounded-[30px]  border border-gray-200 p-1.5">
+                  <div className="flex-1 h-fit rounded-[30px] bg-(--warning) border border-gray-200 p-1.5">
                     <div className="py-2 px-5">
-                      <p className='text-base text-center leading-5 text-(--secondary) title-font'>Dept Owing</p>
+                      <p className='text-base text-center leading-5 text-white title-font'>Money Owing</p>
                     </div>
-                    <div className="w-full h-fit p-5 bg-[#fcfcfc] border border-gray-200 rounded-3xl flex flex-col gap-10">
-                      <h2 className={` ${geistMono.className} text-center font-font-geist-mono font-black text-3xl lg:text-[48px] text-black leading-none tracking-[-0.06em]`}>
-                    N200,000
+                    <div className="w-full h-fit p-5 bg-white items-center border border-(--warning) rounded-3xl justify-center flex flex-col gap-5">
+                      <div className="flex jusify-center w-fit items-center flex-row gap-2">
+                        <p className='text-base w-fit text-center leading-5 text-(--secondary) title-font'>NGN</p>
+                        <h2 className={` text-center w-fit atwtts text-3xl lg:text-[48px] text-black leading-none tracking-[-0.01em]`}>
+                    -1,000
                   </h2>
+                      </div>
+                  <button className="w-full px-5 py-3 title-font bg-black transition-all rounded-xl font-medium leading-[1.1] tracking-body text-sm text-white ">
+      Pay Dept
+    </button>
                     </div>
                   </div>
+                  
                  
                 </div>
               </div>
+              }
             </div>
           </div>
         </div>

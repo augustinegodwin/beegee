@@ -22,8 +22,15 @@
   font-family: custom;
   src: url(./assets/fonts/Boris.ttf);
 } 
+@font-face {
+  font-family: ATWTTS;
+  src: url(./assets/fonts/ATWTTS.ttf);
+} 
 .title-font{
   font-family: custom ; 
+}
+.atwtts{
+  font-family: ATWTTS ;
 }
 body {
   background: var(--background);
