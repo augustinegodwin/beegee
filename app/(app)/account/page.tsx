@@ -133,14 +133,14 @@ export default function Page() {
                 </div>
               </div> */}
               <div className="flex-1 flex flex-col gap-5">
-                <div className="flex-1 flex flex-row gap-5">
-                  <div className="flex-1 h-fit bg-(--card) rounded-[30px]   border border-gray-200 p-1.5">
+                <div className="flex-1 flex flex-col sm:flex-row gap-5">
+                  <div className="flex-1 h-fit bg-(--card) rounded-[30px]  border border-gray-200 p-1.5">
                     <div className="py-2 px-5">
-                      <p className='text-base text-center leading-5 text-(--secondary) title-font'>Account</p>
+                      <p className='text-base text-center leading-5 text-(--secondary) title-font'>Account balance</p>
                     </div>
                     <div className="w-full h-fit p-5 bg-(--green) border border-(--green) rounded-3xl justify-center flex flex-col gap-10">
                       <h2 className={` ${geistMono.className} text-center font-font-geist-mono font-black text-3xl lg:text-[48px] text-white leading-none tracking-[-0.06em]`}>
-                    00.00
+                    N100,000
                   </h2>
                     </div>
                   </div>
@@ -150,7 +150,7 @@ export default function Page() {
                     </div>
                     <div className="w-full h-fit p-5 bg-[#fcfcfc] border border-gray-200 rounded-3xl flex flex-col gap-10">
                       <h2 className={` ${geistMono.className} text-center font-font-geist-mono font-black text-3xl lg:text-[48px] text-black leading-none tracking-[-0.06em]`}>
-                    00.00
+                    N200,000
                   </h2>
                     </div>
                   </div>
