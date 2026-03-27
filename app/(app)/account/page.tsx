@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import MaxWidthContainer from "@/app/components/utils/maxWidthContainer";
 import bot from "@/app/assets/images/user.jpg";
 import Image from "next/image";
@@ -28,157 +28,189 @@ export default function Page() {
                   </h2>
                 </div>
                 <div className="flex flex-row lg:flex-col gap-4 w-full overflow-hidden">
-                  <FilterCard active={true} title="General Settings" />
-                  <FilterCard active={false} title="Wallet" />
+                  <FilterCard active={false} title="General Settings" />
+                  <FilterCard active={true} title="Wallet" />
                   <FilterCard active={false} title="Products" />
                   <FilterCard active={false} title="Orders" />
                   <FilterCard active={false} title="Additional Settings" />
                 </div>
               </div>
-              {
-                activeTab===1 && <div className="flex-1 ">
-                <div className="w-full py-5 px-1 flex flex-col gap-5 sm:gap-10">
-                  <>
-                    <section className="w-full grid gap-x-8 gap-y-6 sm:grid-cols-2">
-                    <div className="space-y-1">
-                      <h2 className="text-lg tracking-body text-(--primary) font-medium title-font">
-                        Profile Image
-                      </h2>
-                      <p className="text-sm tracking-body text-(--secondary) font-medium title-font">
-                        This will be displayed on your product listing.
-                      </p>
-                    </div>
-                    <div className="size-20 rounded-full overflow-hidden border border-gray-100">
-                      <Image className="size-full" alt="logo" src={bot} />
-                    </div>
-                  </section>
-                  <section className="w-full grid gap-x-8 gap-y-6 sm:grid-cols-2">
-                    <div className="space-y-1">
-                      <h2 className="text-lg tracking-body text-(--primary) font-medium title-font">
-                        Account Name
-                      </h2>
-                      <p className="text-sm tracking-body text-(--secondary) font-medium title-font">
-                        This will be displayed on your product listing.
-                      </p>
-                    </div>
-                    <div>
-                      <Input type="text" placeholder="Augustine Godwin" />
-                    </div>
-                  </section>
-                  <section className="w-full grid gap-x-8 gap-y-6 sm:grid-cols-2">
-                    <div className="space-y-1">
-                      <h2 className="text-lg tracking-body text-(--primary) font-medium title-font">
-                        Email Address
-                      </h2>
-                      <p className="text-sm tracking-body text-(--secondary) font-medium title-font">
-                        This will be displayed on your product listing.
-                      </p>
-                    </div>
-                    <div>
-                      <Input
-                        type="text"
-                        placeholder="augustinegodwin312@gmail.com"
-                      />
-                    </div>
-                  </section>
-                  <section className="w-full grid gap-x-8 gap-y-6 sm:grid-cols-2">
-                    <div className="space-y-1">
-                      <h2 className="text-lg tracking-body text-(--primary) font-medium title-font">
-                        Phone Number
-                      </h2>
-                      <p className="text-sm tracking-body text-(--secondary) font-medium title-font">
-                        This will be displayed on your product listing.
-                      </p>
-                    </div>
-                    <div>
-                      <Input type="text" placeholder="09032457431" />
-                    </div>
-                  </section>
-                  <section className="w-full grid gap-x-8 gap-y-6 sm:grid-cols-2">
-                    <div className="space-y-1">
-                      <h2 className="text-lg tracking-body text-(--primary) font-medium title-font">
-                        Password
-                      </h2>
-                      <p className="text-sm tracking-body text-(--secondary) font-medium title-font">
-                        This will be displayed on your product listing.
-                      </p>
-                    </div>
-                    <div>
-                      <Input type="text" placeholder="*************" />
-                    </div>
-                  </section>
-                  <div className="flex gap-5">
-                    <section className="w-full grid gap-x-8 gap-y-6 sm:grid-cols-2">
-                      <div className="space-y-1">
-                        <h2 className="text-lg tracking-body text-(--primary) font-medium title-font">
-                          Level
-                        </h2>
-                        <p className="text-sm tracking-body text-(--secondary) font-medium title-font">
-                          This will be displayed on your product listing.
+              {activeTab === 1 && (
+                <div className="flex-1 ">
+                  <div className="w-full py-5 px-1 flex flex-col gap-5 sm:gap-10">
+                    <>
+                      <section className="w-full grid gap-x-8 gap-y-6 sm:grid-cols-2">
+                        <div className="space-y-1">
+                          <h2 className="text-lg tracking-body text-(--primary) font-medium title-font">
+                            Profile Image
+                          </h2>
+                          <p className="text-sm tracking-body text-(--secondary) font-medium title-font">
+                            This will be displayed on your product listing.
+                          </p>
+                        </div>
+                        <div className="size-20 rounded-full overflow-hidden border border-gray-100">
+                          <Image className="size-full" alt="logo" src={bot} />
+                        </div>
+                      </section>
+                      <section className="w-full grid gap-x-8 gap-y-6 sm:grid-cols-2">
+                        <div className="space-y-1">
+                          <h2 className="text-lg tracking-body text-(--primary) font-medium title-font">
+                            Account Name
+                          </h2>
+                          <p className="text-sm tracking-body text-(--secondary) font-medium title-font">
+                            This will be displayed on your product listing.
+                          </p>
+                        </div>
+                        <div>
+                          <Input type="text" placeholder="Augustine Godwin" />
+                        </div>
+                      </section>
+                      <section className="w-full grid gap-x-8 gap-y-6 sm:grid-cols-2">
+                        <div className="space-y-1">
+                          <h2 className="text-lg tracking-body text-(--primary) font-medium title-font">
+                            Email Address
+                          </h2>
+                          <p className="text-sm tracking-body text-(--secondary) font-medium title-font">
+                            This will be displayed on your product listing.
+                          </p>
+                        </div>
+                        <div>
+                          <Input
+                            type="text"
+                            placeholder="augustinegodwin312@gmail.com"
+                          />
+                        </div>
+                      </section>
+                      <section className="w-full grid gap-x-8 gap-y-6 sm:grid-cols-2">
+                        <div className="space-y-1">
+                          <h2 className="text-lg tracking-body text-(--primary) font-medium title-font">
+                            Phone Number
+                          </h2>
+                          <p className="text-sm tracking-body text-(--secondary) font-medium title-font">
+                            This will be displayed on your product listing.
+                          </p>
+                        </div>
+                        <div>
+                          <Input type="text" placeholder="09032457431" />
+                        </div>
+                      </section>
+                      <section className="w-full grid gap-x-8 gap-y-6 sm:grid-cols-2">
+                        <div className="space-y-1">
+                          <h2 className="text-lg tracking-body text-(--primary) font-medium title-font">
+                            Password
+                          </h2>
+                          <p className="text-sm tracking-body text-(--secondary) font-medium title-font">
+                            This will be displayed on your product listing.
+                          </p>
+                        </div>
+                        <div>
+                          <Input type="text" placeholder="*************" />
+                        </div>
+                      </section>
+                      <div className="flex gap-5">
+                        <section className="w-full grid gap-x-8 gap-y-6 sm:grid-cols-2">
+                          <div className="space-y-1">
+                            <h2 className="text-lg tracking-body text-(--primary) font-medium title-font">
+                              Level
+                            </h2>
+                            <p className="text-sm tracking-body text-(--secondary) font-medium title-font">
+                              This will be displayed on your product listing.
+                            </p>
+                          </div>
+                          <div>
+                            <Input type="text" placeholder="100-600 Level" />
+                          </div>
+                        </section>
+                        <section className="w-full grid gap-x-8 gap-y-6 sm:grid-cols-2">
+                          <div className="space-y-1">
+                            <h2 className="text-lg tracking-body text-(--primary) font-medium title-font">
+                              Matric Number
+                            </h2>
+                            <p className="text-sm tracking-body text-(--secondary) font-medium title-font">
+                              This will be displayed on your product listing.
+                            </p>
+                          </div>
+                          <div>
+                            <Input type="text" placeholder="12356789" />
+                          </div>
+                        </section>
+                      </div>
+                    </>
+                  </div>
+                </div>
+              )}
+              {activeTab === 2 && (
+                <div className="flex-1 flex flex-col gap-5">
+                  <div className="flex-1 flex flex-col sm:flex-row gap-5">
+                    {/* Account Card */}
+                    <div className="flex-1 h-fit rounded-[30px] bg-(--green) border border-gray-200 p-1.5">
+                      <div className="py-2 px-5">
+                        <p className="text-base text-center leading-5 text-white title-font">
+                          Account balance
                         </p>
                       </div>
-                      <div>
-                        <Input type="text" placeholder="100-600 Level" />
+                      <div className="w-full h-fit p-5 bg-foreground items-center border border-(--green) rounded-3xl justify-center flex flex-col gap-5">
+                        <div className="flex jusify-center w-fit items-center flex-row gap-2">
+                          <p className="text-base w-fit text-center leading-5 text-(--secondary) title-font">
+                            NGN
+                          </p>
+                          <h2
+                            className={` text-center w-fit atwtts text-3xl lg:text-[48px] text-black leading-none tracking-[-0.01em]`}
+                          >
+                            100,000
+                          </h2>
+                        </div>
+                        <button className="w-full px-5 py-3 title-font bg-black transition-all rounded-xl font-medium leading-[1.1] tracking-body text-sm text-white ">
+                          Request Withdraw
+                        </button>
                       </div>
-                    </section>
-                    <section className="w-full grid gap-x-8 gap-y-6 sm:grid-cols-2">
-                      <div className="space-y-1">
-                        <h2 className="text-lg tracking-body text-(--primary) font-medium title-font">
-                          Matric Number
-                        </h2>
-                        <p className="text-sm tracking-body text-(--secondary) font-medium title-font">
-                          This will be displayed on your product listing.
+                    </div>
+                    {/* dept Card */}
+                    <div className="flex-1 h-fit rounded-[30px] bg-(--warning) border border-gray-200 p-1.5">
+                      <div className="py-2 px-5">
+                        <p className="text-base text-center leading-5 text-white title-font">
+                          Money Owing
                         </p>
                       </div>
-                      <div>
-                        <Input type="text" placeholder="12356789" />
+                      <div className="w-full h-fit p-5 bg-foreground items-center border border-(--warning) rounded-3xl justify-center flex flex-col gap-5">
+                        <div className="flex jusify-center w-fit items-center flex-row gap-2">
+                          <p className="text-base w-fit text-center leading-5 text-(--secondary) title-font">
+                            NGN
+                          </p>
+                          <h2
+                            className={` text-center w-fit atwtts text-3xl lg:text-[48px] text-black leading-none tracking-[-0.01em]`}
+                          >
+                            -1,000
+                          </h2>
+                        </div>
+                        <button className="w-full px-5 py-3 title-font bg-black transition-all rounded-xl font-medium leading-[1.1] tracking-body text-sm text-white ">
+                          Pay Dept
+                        </button>
                       </div>
-                    </section>
+                    </div>
+                   
                   </div>
-                  </>
+                  {/* payout History */}
+                    <div className="flex-1 h-fit rounded-[30px] bg-(--card) border border-gray-200 p-1.5">
+                      <div className="py-2 px-5">
+                        <p className="text-base text-left leading-5 text-(--secondary) title-font">
+                          Recent Payouts
+                        </p>
+                      </div>
+                      <div className="w-full h-fit p-5 bg-foreground items-center border border-gray-200 rounded-3xl justify-center flex flex-col gap-5">
+                        <div className="flex jusify-center min-h-50 w-fit items-center flex-row gap-2">
+                          <p className="text-base text-left leading-5 text-(--secondary) title-font">
+                          No Transaction Payouts
+                        </p>
+                        </div>
+                        
+                      </div>
+                    </div>
+                  <div>
+                    
+                  </div>
                 </div>
-              </div>
-              }
-              {
-                activeTab ===2 && <div className="flex-1 flex flex-col gap-5">
-                <div className="flex-1 flex flex-col sm:flex-row gap-5">
-                  <div className="flex-1 h-fit bg-(--card) rounded-[30px] bg-(--green) border border-gray-200 p-1.5">
-                    <div className="py-2 px-5">
-                      <p className='text-base text-center leading-5 text-white title-font'>Account balance</p>
-                    </div>
-                    <div className="w-full h-fit p-5 bg-white items-center border border-(--green) rounded-3xl justify-center flex flex-col gap-5">
-                      <div className="flex jusify-center w-fit items-center flex-row gap-2">
-                        <p className='text-base w-fit text-center leading-5 text-(--secondary) title-font'>NGN</p>
-                        <h2 className={` text-center w-fit atwtts text-3xl lg:text-[48px] text-black leading-none tracking-[-0.01em]`}>
-                    100,000
-                  </h2>
-                      </div>
-                  <button className="w-full px-5 py-3 title-font bg-black transition-all rounded-xl font-medium leading-[1.1] tracking-body text-sm text-white ">
-      Request Withdraw
-    </button>
-                    </div>
-                  </div>
-                  <div className="flex-1 h-fit rounded-[30px] bg-(--warning) border border-gray-200 p-1.5">
-                    <div className="py-2 px-5">
-                      <p className='text-base text-center leading-5 text-white title-font'>Money Owing</p>
-                    </div>
-                    <div className="w-full h-fit p-5 bg-white items-center border border-(--warning) rounded-3xl justify-center flex flex-col gap-5">
-                      <div className="flex jusify-center w-fit items-center flex-row gap-2">
-                        <p className='text-base w-fit text-center leading-5 text-(--secondary) title-font'>NGN</p>
-                        <h2 className={` text-center w-fit atwtts text-3xl lg:text-[48px] text-black leading-none tracking-[-0.01em]`}>
-                    -1,000
-                  </h2>
-                      </div>
-                  <button className="w-full px-5 py-3 title-font bg-black transition-all rounded-xl font-medium leading-[1.1] tracking-body text-sm text-white ">
-      Pay Dept
-    </button>
-                    </div>
-                  </div>
-                  
-                 
-                </div>
-              </div>
-              }
+              )}
             </div>
           </div>
         </div>
