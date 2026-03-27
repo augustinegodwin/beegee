@@ -26,7 +26,7 @@ export default function Page() {
                 </div>
               </div>
               <div className="flex-1 ">
-                <div className="w-full py-5 px-1 flex flex-col gap-10">
+                <div className="w-full py-5 px-1 flex flex-col gap-5 lg:gap-10">
                   <>
                     <section className="w-full grid gap-x-8 gap-y-6 sm:grid-cols-2">
                     <div className="space-y-1">
