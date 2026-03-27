@@ -3,7 +3,7 @@ import React from 'react'
 export default function ProductCard() {
   return (
     <div className="w-full flex flex-col gap-4">
-        <div className="w-full aspect-[0.882609/1] bg-(--card) rounded-2xl"></div>
+        <div className="w-full aspect-[0.882609/1] border border-gray-200 bg-(--card) rounded-2xl"></div>
         <div className="w-ful flex flex-col gap-2.5">
             <div className="w-full">
                 <p className='text-semibold leading-body tracking-body text-sm text-(--primary) title-font'>Men’s Baggy Light-Wash Vintage Denim – Distressed Sand Finish</p>
