@@ -14,25 +14,28 @@ const geistMono = Geist_Mono({
 });
 
 export default function Page() {
-  const [activeTab, setActiveTab] = useState(2);
+  const [activeTab, setActiveTab] = useState(1);
   return (
     <MaxWidthContainer>
       <div className="w-full py-25 ">
         <div className="w-full flex justify-start">
           <div className="w-full items-start justify-start flex flex-row lg:flex-col gap-5">
-            <div className="flex w-full flex-col lg:flex-row gap-[40px] lg:gap-25">
-              <div className="w-full lg:w-50 flex flex-col gap-4">
-                <div className="w-full">
+            <div className="flex w-full flex-col lg:flex-row gap-10 lg:gap-25">
+              <div className="w-full lg:w-50 flex flex-col gap-5">
+                <div className="w-full flex flex-col  gap-4">
                   <h2 className="text-left title-font font-bold text-5xl lg:text-[54px] text-(--primary) leading-none tracking-header">
                     Account
                   </h2>
+                   <p className="text-base text-left leading-5 text-(--secondary) title-font">
+                          Welcome back, Augustine!
+                        </p>
                 </div>
                 <div className="flex flex-row lg:flex-col gap-4 w-full overflow-hidden">
                   <FilterCard active={false} title="General Settings" />
                   <FilterCard active={true} title="Wallet" />
                   <FilterCard active={false} title="Products" />
                   <FilterCard active={false} title="Orders" />
-                  <FilterCard active={false} title="Additional Settings" />
+                  <FilterCard active={false} title="Payments,Addresses and Others" />
                 </div>
               </div>
               {activeTab === 1 && (

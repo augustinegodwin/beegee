@@ -21,35 +21,35 @@ export default function Footer() {
           </div>
           <div className="w-fit grid grid-cols-3 gap-[34px]">
             <div className="flex flex-col gap-4">
-              <Link href={"/store"} className="text-(--secondary) text-sm text-lg font-medium leading-body tracking-body">
+              <Link href={"/store"} className="text-(--secondary) text-sm title-font font-medium leading-body tracking-body">
                 Home
               </Link>
-              <Link href={"/store"} className="text-(--secondary) text-sm text-lg font-medium leading-body tracking-body">
+              <Link href={"/store"} className="text-(--secondary) text-sm title-font font-medium leading-body tracking-body">
                 Store
               </Link>
-              <Link href={"/store"} className="text-(--secondary) text-sm text-lg font-medium leading-body tracking-body">
+              <Link href={"/store"} className="text-(--secondary) text-sm title-font font-medium leading-body tracking-body">
                 Terms
               </Link>
             </div>
             <div className="flex flex-col gap-4">
-              <Link href={"/store"} className="text-(--secondary) text-sm text-lg font-medium leading-body tracking-body">
+              <Link href={"/store"} className="text-(--secondary) text-sm title-font font-medium leading-body tracking-body">
                 Contact
               </Link>
-              <Link href={"/store"} className="text-(--secondary) text-sm text-lg font-medium leading-body tracking-body">
+              <Link href={"/store"} className="text-(--secondary) text-sm title-font font-medium leading-body tracking-body">
                 Blog
               </Link>
-              <Link href={"/store"} className="text-(--secondary) text-sm text-lg font-medium leading-body tracking-body">
+              <Link href={"/store"} className="text-(--secondary) text-sm title-font font-medium leading-body tracking-body">
                 Terms
               </Link>
             </div>
             <div className="flex flex-col gap-4">
-              <Link href={"/store"} className="text-(--secondary) text-sm text-lg font-medium leading-body tracking-body">
+              <Link href={"/store"} className="text-(--secondary) text-sm title-font font-medium leading-body tracking-body">
                 X&nbsp;(Twitter)
               </Link>
-              <Link href={"/store"} className="text-(--secondary) text-sm text-lg font-medium leading-body tracking-body">
+              <Link href={"/store"} className="text-(--secondary) text-sm title-font font-medium leading-body tracking-body">
                 FaceBook
               </Link>
-              <Link href={"/store"} className="text-(--secondary) text-sm text-lg font-medium leading-body tracking-body">
+              <Link href={"/store"} className="text-(--secondary) text-sm title-font font-medium leading-body tracking-body">
                 Instagram
               </Link>
             </div>

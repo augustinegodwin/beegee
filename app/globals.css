@@ -20,14 +20,22 @@
 }
 @font-face {
   font-family: custom;
-  src: url(./assets/fonts/Boris.ttf);
+  src: url(./assets/fonts/Avengenz.ttf);
 } 
 @font-face {
   font-family: ATWTTS;
   src: url(./assets/fonts/ATWTTS.ttf);
 } 
+@font-face {
+  font-family: InterB;  
+  src: url(./assets/fonts/Avengenz.ttf);
+} 
 .title-font{
   font-family: custom ; 
+  letter-spacing: normal !important ;
+}
+.title-font2{
+  font-family: InterB ; 
 }
 .atwtts{
   font-family: ATWTTS ;
@@ -41,7 +49,7 @@ body {
   @apply tracking-[-0.04em]
 }
 .tracking-body{
-  @apply tracking-[-0.04em]
+  @apply tracking-[-0.01em] 
 }
 .leading-body{
   @apply leading-[1.4em]
