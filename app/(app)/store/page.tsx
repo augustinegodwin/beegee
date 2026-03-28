@@ -2,9 +2,10 @@ import Button from "@/app/components/utils/button";
 import FilterCard from "@/app/components/utils/filterCard";
 import MaxWidthContainer from "@/app/components/utils/maxWidthContainer";
 import ProductCard from "@/app/components/utils/productCard";
-import category from "@/app/assets/images/category-2.svg";
+import category from "@/app/assets/images/filter.svg";
 import SwitchCard from "@/app/components/utils/switchCard";
 import Image from "next/image";
+import bg from "@/app/assets/images/bg.avif";
 const filterItems = [
   {
     title: "All Items",
@@ -35,7 +36,12 @@ export default function Page() {
   return (
     <MaxWidthContainer>
       <div className="pt-18.75 w-full flex flex-col">
-        <div className="w-full mt-10 py-25 p-5 bg-foreground border border-gray-200 rounded-3xl">
+        <div className="w-full mt-10 py-25 p-5 bg-foreground border relative border-gray-200 rounded-3xl">
+          <Image
+            src={bg}
+            alt="background"
+            className="w-full h-full object-cover rounded-3xl absolute top-0 left-0 opacity-20"
+          />
           <div className="w-full flex justify-center">
             <div className="w-full items-center justify-center max-w-150 flex flex-col gap-5">
               <div className="w-fit">
@@ -57,7 +63,7 @@ export default function Page() {
           <div className="w-full flex gap-5 flex-row">
             <div className="flex-1 overflow-hidden ">
               <div className="flex lg:hidden">
-                <button className="border border-gray-200 cursor-pointer rounded-full px-2 py-2 bg-(--card)">
+                <button className="border border-gray-200 cursor-pointer rounded-full size-10.5 flex justify-center items-center bg-(--card)">
                   <Image src={category} alt="category" className="size-6" />
                 </button>
               </div>

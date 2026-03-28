@@ -17,13 +17,13 @@ export default function Page() {
   const [activeTab, setActiveTab] = useState(1);
   return (
     <MaxWidthContainer>
-      <div className="w-full py-25 ">
-        <div className="w-full flex justify-start pt-18.75">
+      <div className="w-full py-25">
+        <div className="w-full flex justify-start   pt-15 flex-col ">
           <div className="w-full items-start justify-start flex flex-row lg:flex-col gap-5">
             <div className="flex w-full flex-col lg:flex-row gap-10 lg:gap-25">
               <div className="w-full lg:w-50 flex flex-col gap-5">
                 <div className="w-full flex flex-col  gap-4">
-                  <h2 className="text-left title-font font-bold text-5xl lg:text-[54px] text-(--primary) leading-none tracking-header">
+                  <h2 className="text-left title-font font-bold text-5xl lg:text-[48px] text-(--primary) leading-none tracking-header">
                     Account
                   </h2>
                    <p className="text-base text-left leading-5 text-(--secondary) title-font">
