@@ -18,7 +18,7 @@ export default function Page() {
   return (
     <MaxWidthContainer>
       <div className="w-full py-25 ">
-        <div className="w-full flex justify-start">
+        <div className="w-full flex justify-start pt-18.75">
           <div className="w-full items-start justify-start flex flex-row lg:flex-col gap-5">
             <div className="flex w-full flex-col lg:flex-row gap-10 lg:gap-25">
               <div className="w-full lg:w-50 flex flex-col gap-5">
