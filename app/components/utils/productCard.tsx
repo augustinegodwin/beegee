@@ -6,12 +6,12 @@ export default function ProductCard() {
         <div className="w-full aspect-[0.882609/1] border border-gray-200 bg-(--card) rounded-2xl"></div>
         <div className="w-ful flex flex-col gap-2.5">
             <div className="w-full">
-                <p className='text-semibold leading-body tracking-body text-sm text-(--primary) title-font'>Men’s Baggy Light-Wash Vintage Denim – Distressed Sand Finish</p>
+                <p className='text-semibold leading-body line-clamp-2 tracking-body text-sm text-(--primary) atwtts'>Men’s Baggy Light-Wash Vintage Denim – Distressed Sand Finish</p>
 
             </div>
             <div className="flex w-full justify-between">
-                <p className='text-semibold leading-body tracking-body text-sm title-font text-(--warning)'>Unavaliable</p>
-                <p className='text-semibold leading-body tracking-body title-font text-sm text-(--primary)'>N250,000</p>
+                <p className='text-semibold leading-body tracking-body text-sm atwtts text-(--warning)'>Unavaliable</p>
+                <p className='text-semibold leading-body tracking-body atwtts text-sm text-(--primary)'>N250,000</p>
             </div>
         </div>
     </div>

@@ -34,7 +34,7 @@ export default function Page() {
   return (
     <MaxWidthContainer>
       <div className='pt-18.75 w-full flex flex-col'>
-        <div className="w-full mt-10 py-25 p-5 bg-[#ecfce4] border border-gray-200 rounded-3xl">
+        <div className="w-full mt-10 py-25 p-5 bg-foreground border border-gray-200 rounded-3xl">
           <div className="w-full flex justify-center">
                 <div className="w-full items-center justify-center max-w-150 flex flex-col gap-5">
                   <div className="w-fit">
