@@ -1,3 +1,4 @@
+"use client"
 import Button from "@/app/components/utils/button";
 import FilterCard from "@/app/components/utils/filterCard";
 import MaxWidthContainer from "@/app/components/utils/maxWidthContainer";
@@ -6,6 +7,9 @@ import category from "@/app/assets/images/filter.svg";
 import SwitchCard from "@/app/components/utils/switchCard";
 import Image from "next/image";
 import bg from "@/app/assets/images/bg.avif";
+import ProductDetails from "@/app/components/sections/productDetails";
+import { useState } from "react";
+import { ProductModal } from "@/app/components/utils/product-details";
 const filterItems = [
   {
     title: "All Items",
@@ -32,7 +36,34 @@ const filterItems = [
     active: false,
   },
 ];
+const o={
+    id: '1',
+    name: 'Premium Leather Handbag',
+    price: 189,
+    originalPrice: 249,
+    rating: 4.8,
+    reviews: 127,
+    image: 'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=800&q=80',
+    description: 'Crafted from genuine Italian leather, this sophisticated handbag is the perfect companion for any occasion. Its timeless design and superior craftsmanship make it an investment piece.',
+    details: [
+      'Genuine Italian leather construction',
+      'Spacious main compartment with multiple pockets',
+      'Adjustable shoulder strap',
+      'Gold-tone hardware',
+      'Dust bag included'
+    ],
+    inStock: true,
+  }
+
 export default function Page() {
+  const [selectedProduct, setSelectedProduct] = useState<any>(null)
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
+  const handleOpenProduct = () => {
+    setSelectedProduct(o)
+    setIsModalOpen(true)
+  }
+  
   return (
     <MaxWidthContainer>
       <div className="pt-18.75 w-full flex flex-col">
@@ -77,7 +108,7 @@ export default function Page() {
               <SwitchCard />
             </div>
           </div>
-          <div className="w-full grid grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="w-full grid grid-cols-2 lg:grid-cols-4 gap-4" onClick={()=>handleOpenProduct()}>
             <ProductCard />
             <ProductCard />
             <ProductCard />
@@ -105,6 +136,11 @@ export default function Page() {
           </div>
         </div>
       </div>
+      <ProductModal
+          isOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+          product={selectedProduct}
+        />
     </MaxWidthContainer>
   );
 }
