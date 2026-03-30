@@ -1,5 +1,6 @@
 "use client";
 import cancel from '@/app/assets/images/cancel.svg';
+import bootle from '@/app/assets/images/bottle.jpg';
 import { useState } from "react";
 import { X, Star, Minus, Plus, Heart, Share2 } from "lucide-react";
 import Image from 'next/image';
@@ -35,33 +36,29 @@ export function ProductModal({ isOpen, onClose, product }: ProductModalProps) {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-1 bg-black/50">
-      <div className="relative w-full max-w-4xl h-full lg:max-h-[90vh] overflow-y-scroll border border-gray-200 rounded-3xl bg-white p-1">
+      <div className="relative w-full max-w-4xl h-auto max-h-full lg:max-h-[90vh] overflow-y-scroll sm:overflow-hidden  border-gray-200 rounded-3xl bg-black p-1">
         <div className="p-3 flex items-center justify-between">
-                <p className="leading-body text-lg title-font track-body font-medium text-(--secondary)">
+                <p className="leading-body text-lg title-font track-body font-medium text-white">
                   Product details
                 </p>
                 {/* <div className="size-10 rounded-full bg-(--card) flex items-center justify-center border-gray-200 overflow-hidden border p-0.5"> */}
                 <Image onClick={onClose} src={cancel} alt="cancel" className="size-6" />
             {/* </div> */}
           </div>
-      <div className="relative w-full h-fit  rounded-3xl bg-foreground border border-gray-100">
+      <div className="relative w-full h-fit  rounded-3xl bg-white border border-gray-100">
         
 
         {/* Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 p-4">
           {/* Image Section */}
           <div className="flex flex-col gap-4">
-            <div className="relative w-full aspect-square bg-secondary rounded-lg overflow-hidden">
-              <img
-                src={product.image}
+            <div className="relative w-full aspect-square bg-gray-200 rounded-2xl overflow-hidden">
+              <Image
+                src={bootle}
                 alt={product.name}
                 className="w-full h-full rounded-2xl object-cover"
               />
-              {discount > 0 && (
-                <div className="absolute top-4 right-4 bg-accent text-accent-foreground px-3 py-1 rounded-full text-sm font-medium">
-                  -{discount}%
-                </div>
-              )}
+              
             </div>
           </div>
 
@@ -69,8 +66,8 @@ export function ProductModal({ isOpen, onClose, product }: ProductModalProps) {
           <div className="flex flex-col gap-4">
             {/* Product Name */}
             <div>
-              <h2 className="font-serif text-3xl font-bold text-black title-font2">
-                Men’s Baggy Light-Wash Vintage Denim – Distressed Sand Finish
+              <h2 className="font-serif text-3xl text-black title-font2">
+                3-in-1 Pink Water Bottle Set with Insulated Tumbler & Straw
               </h2>
 
               {/* Rating */}
@@ -96,12 +93,12 @@ export function ProductModal({ isOpen, onClose, product }: ProductModalProps) {
             {/* Price Section */}
             <div className="border-t border-border ">
               <div className="flex items-baseline gap-4">
-                <span className="title-font text-4xl font-bold text-(--secondary)">
-                  ${product.price.toFixed(2)}
+                <span className="title-font text-4xl title-font2 text-(--green)">
+                  N10,500
                 </span>
                 {product.originalPrice && (
-                  <span className="text-lg title-font text-(--secondary) line-through">
-                    ${product.originalPrice.toFixed(2)}
+                  <span className="text-lg title-font2 title-font text-(--warning) line-through">
+                    N15,000
                   </span>
                 )}
               </div>
@@ -110,7 +107,7 @@ export function ProductModal({ isOpen, onClose, product }: ProductModalProps) {
             {/* Description */}
             <div>
               <p className="text-(--secondary) leading-body tracking-body title-font ">
-                {product.description}
+                Stay hydrated in style with the ultimate Tai Pei Bear 3-Piece Hydration Set. Whether you’re heading to the gym, the office, or running errands, this coordinated trio ensures you have the right size for every part of your day.
               </p>
               {/* <ul className="space-y-2">
                 {product.details.map((detail, idx) => (
@@ -142,11 +139,11 @@ export function ProductModal({ isOpen, onClose, product }: ProductModalProps) {
                     onClick={() => setQuantity(quantity + 1)}
                     className="p-2 hover:bg-secondary transition-colors"
                   >
-                    <Plus className="w-4 h-4" />
+                    <Plus className="w-4 h-4 text-black" />
                   </button>
                 </div>
-                <span className="text-sm text-(--secondery)">
-                  {product.inStock ? "✓ In Stock" : "Out of Stock"}
+                <span className="text-sm title-font2 text-(--success)">
+                  {product.inStock ? "Available" : "Out of Stock"}
                 </span>
               </div>
             </div>
@@ -155,9 +152,9 @@ export function ProductModal({ isOpen, onClose, product }: ProductModalProps) {
             <div className="border-t border-border  flex flex-col gap-3">
               <button
                 disabled={!product.inStock}
-                className="w-full bg-(--green) py-3 rounded-lg tracking-body leading-body title-font font-medium hover:bg-green-600 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full bg-green-600 py-3 rounded-lg tracking-body leading-body title-font2 font-medium hover:bg-(--green) transition-opacity disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Add to Cart
+                Buy Now
               </button>
               
             </div>

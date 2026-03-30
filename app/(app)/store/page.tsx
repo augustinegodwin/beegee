@@ -10,6 +10,7 @@ import bg from "@/app/assets/images/bg.avif";
 import ProductDetails from "@/app/components/sections/productDetails";
 import { useState } from "react";
 import { ProductModal } from "@/app/components/utils/product-details";
+import CookieBanner from "@/app/components/utils/toast";
 const filterItems = [
   {
     title: "All Items",
@@ -141,6 +142,7 @@ export default function Page() {
           onClose={() => setIsModalOpen(false)}
           product={selectedProduct}
         />
+        <CookieBanner/>
     </MaxWidthContainer>
   );
 }
