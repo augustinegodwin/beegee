@@ -6,11 +6,7 @@ const CookieBanner = () => {
       className="hidden  z-10 p-4 rounded-2xl"
       data-testid="cookie-banner-root"
       dir="ltr"
-      style={{
-        "--banner-animation-duration": "0ms",
-        "--banner-entry-animation": "none",
-        "--banner-exit-animation": "none",
-      }}
+  
     >
       <div
         tabIndex={0}
