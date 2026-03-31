@@ -1,10 +1,18 @@
 import cancel from '@/app/assets/images/cancel.svg';
 import SectionHeader from "../utils/sectionHeader";
 import Image from 'next/image';
-
 export default function Hero() {
   return (
-    <div className="w-full h-screen max-h-250 px-5 min-h-150 bg-foreground border-b border-gray-100 flex justify-center items-center">
+    <div className="w-full flex justify-center h-screen max-h-250 py-4 px-4 min-h-150 ">
+      <div className="w-full bri relative bg-(--card) px-4 h-full max-w-[1920px] rounded-4xl border border-gray-200 flex justify-center items-center">
+        {/* <video
+          src={"../../assets/images/bg.mp4"}
+          className='w-full h-full'  
+          autoPlay
+        /> */}
+        {/* <div className="absolute inset-0 ">
+          <div className="card w-[150px] rounded-2xl absolute left-10 h-[200px] border-5 border-white"></div>
+        </div> */}
       <SectionHeader
         title="Join Bigham’s Largest Marketplace"
         body="Select a category to find textbooks, electronics, fashion, and more from your fellow students"
@@ -31,6 +39,7 @@ export default function Hero() {
           </div>
         </div>
       </div> */}
+    </div>
     </div>
   );
 }

@@ -8,7 +8,7 @@ import search from "../../assets/images/search.svg"
 
 export default function Navigation() {
   return (
-    <div className="w-full flex fixed  justify-center px-4 sm:px-5 py-4 items-center">
+    <div className="w-full flex z-10 fixed top-5 justify-center px-4 sm:px-5 py-4 items-center">
       <div className="w-full  max-w-150 lg:max-w-300 ">
         <div className="flex justify-between">
           <Link href={"/"} className="flex gap-1 w-fit items-center">

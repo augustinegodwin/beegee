@@ -57,3 +57,10 @@ body {
 .link-style{
   @apply text-(--green)
 }
+.bg-fo{
+  /* background:linear-gradient(0deg, var(--token-05a02bb2-7838-4389-9f7d-c52d95863a7d, rgb(17, 80, 54)) , var(--token-a51bbfb7-d66f-4efb-8c73-18fea4bfb45d, rgb(37, 33, 33)) ) ; */
+} 
+.bri{ 
+  background-image:url(./assets/images/bg.mp4); 
+  background-size:cover;
+}

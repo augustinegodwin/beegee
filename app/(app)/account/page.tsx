@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export default function Page() {
-  const [activeTab, setActiveTab] = useState(1);
+  const [activeTab, setActiveTab] = useState(2);
   return (
     <MaxWidthContainer>
       <div className="w-full py-25">

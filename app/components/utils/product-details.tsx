@@ -35,17 +35,17 @@ export function ProductModal({ isOpen, onClose, product }: ProductModalProps) {
     : 0;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-1 bg-black/50">
-      <div className="relative w-full max-w-4xl h-auto max-h-full lg:max-h-[90vh] overflow-y-scroll sm:overflow-hidden  border-gray-200 rounded-3xl bg-black p-1">
+    <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-10 bg-black/50">
+      <div className="relative w-full max-w-[500px] md:max-w-4xl h-[90vh] sm:h-auto max-h-full sm:max-h-[90vh] overflow-y-scroll sm:overflow-hidden  border-gray-200 rounded-t-3xl sm:rounded-3xl bg-(--card) p-1">
         <div className="p-3 flex items-center justify-between">
-                <p className="leading-body text-lg title-font track-body font-medium text-white">
+                <p className="leading-body text-lg title-font2 track-body font-medium text-black">
                   Product details
                 </p>
                 {/* <div className="size-10 rounded-full bg-(--card) flex items-center justify-center border-gray-200 overflow-hidden border p-0.5"> */}
                 <Image onClick={onClose} src={cancel} alt="cancel" className="size-6" />
             {/* </div> */}
           </div>
-      <div className="relative w-full h-fit  rounded-3xl bg-white border border-gray-100">
+      <div className="relative w-full h-fit  rounded-3xl bg-white border border-gray-200">
         
 
         {/* Content */}
@@ -66,7 +66,7 @@ export function ProductModal({ isOpen, onClose, product }: ProductModalProps) {
           <div className="flex flex-col gap-4">
             {/* Product Name */}
             <div>
-              <h2 className="font-serif text-3xl text-black title-font2">
+              <h2 className="font-serif text-3xl tracking-header text-black title-font2">
                 3-in-1 Pink Water Bottle Set with Insulated Tumbler & Straw
               </h2>
 
@@ -91,7 +91,7 @@ export function ProductModal({ isOpen, onClose, product }: ProductModalProps) {
             </div>
 
             {/* Price Section */}
-            <div className="border-t border-border ">
+            <div className=" border-gray-100 ">
               <div className="flex items-baseline gap-4">
                 <span className="title-font text-4xl title-font2 text-(--green)">
                   N10,500
