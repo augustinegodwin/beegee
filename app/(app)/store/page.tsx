@@ -7,10 +7,12 @@ import category from "@/app/assets/images/filter.svg";
 import SwitchCard from "@/app/components/utils/switchCard";
 import Image from "next/image";
 import bg from "@/app/assets/images/bg.avif";
-import ProductDetails from "@/app/components/sections/productDetails";
 import { useState } from "react";
 import { ProductModal } from "@/app/components/utils/product-details";
 import CookieBanner from "@/app/components/utils/toast";
+import useFetch from "@/app/lib/useAsyncFetch";
+import { getAllProducts } from "@/app/lib/async_data";
+import Spinner from "@/app/components/utils/spinner";
 const filterItems = [
   {
     title: "All Items",
@@ -59,7 +61,14 @@ const o={
 export default function Page() {
   const [selectedProduct, setSelectedProduct] = useState<any>(null)
   const [isModalOpen, setIsModalOpen] = useState(false)
-
+  const {
+    data: products,
+    loading,
+    refetch,
+  } = useFetch({
+    fn: getAllProducts, // Your API function
+    // params: { category: 'electronics' }
+  });
   const handleOpenProduct = () => {
     setSelectedProduct(o)
     setIsModalOpen(true)
@@ -109,32 +118,25 @@ export default function Page() {
               <SwitchCard />
             </div>
           </div>
-          <div className="w-full grid grid-cols-2 lg:grid-cols-4 gap-4" onClick={()=>handleOpenProduct()}>
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-          </div>
+          {
+            loading && (<div className="w-full h-[20vh] flex items-center justify-center">
+                    <Spinner />
+                  </div>) 
+
+          }
+          {
+            !loading && products && (
+                <div className="w-full grid grid-cols-2 lg:grid-cols-4 gap-4" onClick={()=>handleOpenProduct()}>
+                {products.products.map((product: any) => (
+                  <ProductCard
+                    key={product.id}
+                    product={product}
+                  />
+                ))}
+              </div>
+            )
+          }
+          
         </div>
       </div>
       <ProductModal

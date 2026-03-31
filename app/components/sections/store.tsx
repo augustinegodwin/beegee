@@ -1,9 +1,17 @@
-import React from 'react'
+"use client"
 import MaxWidthContainer from '../utils/maxWidthContainer'
 import SectionHeader from '../utils/sectionHeader'
 import ProductCard from '../utils/productCard'
+import { useEffect } from 'react'
 
-export default function Store() {
+type pageProps = {
+  products: any[]
+}
+
+export default function Store({ products }: pageProps) {
+  useEffect(()=>{
+    console.log(products)
+  },[])
   return (
     <MaxWidthContainer>
         <div className="py-25 flex flex-col justify-center gap-25">
@@ -14,14 +22,9 @@ export default function Store() {
                 buttonAction='/store'
             />
              <div className="w-full grid grid-cols-2 lg:grid-cols-4 gap-4">
-                <ProductCard/>
-                <ProductCard/>
-                <ProductCard/>
-                <ProductCard/>
-                <ProductCard/>
-                <ProductCard/>
-                <ProductCard/>
-                <ProductCard/>
+                {products.slice(8,16).map((product) => (
+                    <ProductCard product={product} key={product.id} />
+                ))}
              </div>
         </div>
     </MaxWidthContainer>
