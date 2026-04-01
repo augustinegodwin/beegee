@@ -4,7 +4,7 @@ import bookmark from "@/app/assets/images/bookmark.svg";
 export default function ProductCard({ product }: any) {
   return (
     <div className="w-full flex flex-col gap-4">
-      <div className="w-full overflow-hidden aspect-[0.882609/1]  border-gray-200 bg-(--card) rounded-2xl ">
+      <div className="w-full overflow-hidden aspect-[0.882609/1] border-gray-200 bg-(--card) rounded-2xl ">
         <Image
           src={product.image[0].url}
           alt={product.title}
@@ -34,20 +34,20 @@ export default function ProductCard({ product }: any) {
             N{product.price}
           </p>
         </div>
-      </div>
-      <div className="flex gap-2">
-        {product.availabilityStatus ? (
-        <button className="w-full px-5 py-3 title-font2 bg-green-600 transition-all rounded-xl font-medium leading-[1.1] tracking-body text-sm text-white ">
-          {product.forSale ? "Purchase" : "Rent Now"}
-        </button>
-      ) : (
-        <button className="w-full px-5 py-3 title-font2 bg-gray-200 transition-all rounded-xl font-medium leading-[1.1] tracking-body text-sm text-black ">
-          {product.forSale ? "Purchase" : "Rent Now"}
-        </button>
-      )}
-      <button className="w-fit h-full border border-gray-200 aspect-square flex justify-center items-center title-font2 bg-(--card) transition-all rounded-xl font-medium leading-[1.1] tracking-body text-sm text-black ">
-          <Image src={bookmark} alt="bookmark" className="size-6" />
-        </button>
+        <div className="flex gap-2">
+          {product.availabilityStatus ? (
+            <button className="w-full px-5 py-3 title-font2 bg-green-600 transition-all rounded-xl font-medium leading-[1.1] tracking-body text-sm text-white ">
+              {product.forSale ? "Purchase" : "Rent"}
+            </button>
+          ) : (
+            <button className="w-full px-5 py-3 title-font2 bg-(--green) transition-all rounded-xl font-medium leading-[1.1] tracking-body text-sm text-white ">
+              {product.forSale ? "Purchase" : "Rent"}
+            </button>
+          )}
+           <button className="w-full px-5 py-3 title-font2 bg-(--card) transition-all rounded-xl font-medium leading-[1.1] tracking-body text-sm text-black ">
+              View
+            </button>
+        </div>
       </div>
     </div>
   );
