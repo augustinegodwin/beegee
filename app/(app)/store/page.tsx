@@ -78,11 +78,11 @@ export default function Page() {
     <MaxWidthContainer>
       <div className="pt-18.75 w-full flex flex-col">
         <div className="w-full mt-10 py-25 p-5 bg-foreground border relative border-gray-200 rounded-3xl">
-          <Image
+          {/* <Image
             src={bg}
             alt="background"
             className="w-full h-full object-cover rounded-3xl absolute top-0 left-0 opacity-20"
-          />
+          /> */}
           <div className="w-full flex justify-center">
             <div className="w-full items-center justify-center max-w-150 flex flex-col gap-5">
               <div className="w-fit">

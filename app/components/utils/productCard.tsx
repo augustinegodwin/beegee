@@ -1,9 +1,10 @@
 import Image from "next/image"
+import Button from "./button"
 
 export default function ProductCard({ product }: any) {
   return (
     <div className="w-full flex flex-col gap-4">
-        <div className="w-full overflow-hidden aspect-[0.882609/1] border border-gray-200 bg-(--card) rounded-2xl ">
+        <div className="w-full overflow-hidden aspect-[0.882609/1]  border-gray-200 bg-(--card) rounded-2xl ">
             <Image
                 src={product.image[0].url}
                 alt={product.title}
@@ -26,6 +27,13 @@ export default function ProductCard({ product }: any) {
                 <p className='text-semibold leading-body tracking-body atwtts text-sm text-(--primary)'>N{product.price}</p>
             </div>
         </div>
+        {
+                    product.availabilityStatus ? <button className="w-full px-5 py-3 title-font2 bg-green-600 transition-all rounded-xl font-medium leading-[1.1] tracking-body text-sm text-white ">
+     {product.forSale ? "Purchase" : "Rent Now"} 
+    </button> :<button className="w-full px-5 py-3 title-font2 bg-gray-200 transition-all rounded-xl font-medium leading-[1.1] tracking-body text-sm text-black ">
+     {product.forSale ? "Purchase" : "Rent Now"} 
+    </button>
+}
     </div>
   )
 }
