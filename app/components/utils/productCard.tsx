@@ -1,39 +1,54 @@
-import Image from "next/image"
-import Button from "./button"
+import Image from "next/image";
+import bookmark from "@/app/assets/images/bookmark.svg";
 
 export default function ProductCard({ product }: any) {
   return (
     <div className="w-full flex flex-col gap-4">
-        <div className="w-full overflow-hidden aspect-[0.882609/1]  border-gray-200 bg-(--card) rounded-2xl ">
-            <Image
-                src={product.image[0].url}
-                alt={product.title}
-                className="size-full rounded-2xl object-cover"
-                width={100}
-                  sizes="100vw"
-
-                height={100}
-            /> 
+      <div className="w-full overflow-hidden aspect-[0.882609/1]  border-gray-200 bg-(--card) rounded-2xl ">
+        <Image
+          src={product.image[0].url}
+          alt={product.title}
+          className="size-full rounded-2xl object-cover"
+          width={100}
+          sizes="100vw"
+          height={100}
+        />
+      </div>
+      <div className="w-ful flex flex-col gap-2.5">
+        <div className="w-full">
+          <p className="text-semibold leading-body line-clamp-2 tracking-body text-sm text-(--primary) atwtts">
+            {product.title}
+          </p>
         </div>
-        <div className="w-ful flex flex-col gap-2.5">
-            <div className="w-full">
-                <p className='text-semibold leading-body line-clamp-2 tracking-body text-sm text-(--primary) atwtts'>{product.title}</p>
-
-            </div>
-            <div className="flex w-full justify-between">
-                {
-                    product.availabilityStatus ? <p className='text-semibold leading-body tracking-body text-sm atwtts text-(--green)'>Avaliable</p>:<p className='text-semibold leading-body tracking-body text-sm atwtts text-(--warning)'>Unavaliable</p>
-                }
-                <p className='text-semibold leading-body tracking-body atwtts text-sm text-(--primary)'>N{product.price}</p>
-            </div>
+        <div className="flex w-full justify-between">
+          {product.availabilityStatus ? (
+            <p className="text-semibold leading-body tracking-body text-sm atwtts text-(--green)">
+              Avaliable
+            </p>
+          ) : (
+            <p className="text-semibold leading-body tracking-body text-sm atwtts text-(--warning)">
+              Unavaliable
+            </p>
+          )}
+          <p className="text-semibold leading-body tracking-body atwtts text-sm text-(--primary)">
+            N{product.price}
+          </p>
         </div>
-        {
-                    product.availabilityStatus ? <button className="w-full px-5 py-3 title-font2 bg-green-600 transition-all rounded-xl font-medium leading-[1.1] tracking-body text-sm text-white ">
-     {product.forSale ? "Purchase" : "Rent Now"} 
-    </button> :<button className="w-full px-5 py-3 title-font2 bg-gray-200 transition-all rounded-xl font-medium leading-[1.1] tracking-body text-sm text-black ">
-     {product.forSale ? "Purchase" : "Rent Now"} 
-    </button>
-}
+      </div>
+      <div className="flex gap-2">
+        {product.availabilityStatus ? (
+        <button className="w-full px-5 py-3 title-font2 bg-green-600 transition-all rounded-xl font-medium leading-[1.1] tracking-body text-sm text-white ">
+          {product.forSale ? "Purchase" : "Rent Now"}
+        </button>
+      ) : (
+        <button className="w-full px-5 py-3 title-font2 bg-gray-200 transition-all rounded-xl font-medium leading-[1.1] tracking-body text-sm text-black ">
+          {product.forSale ? "Purchase" : "Rent Now"}
+        </button>
+      )}
+      <button className="w-fit h-full border border-gray-200 aspect-square flex justify-center items-center title-font2 bg-(--card) transition-all rounded-xl font-medium leading-[1.1] tracking-body text-sm text-black ">
+          <Image src={bookmark} alt="bookmark" className="size-6" />
+        </button>
+      </div>
     </div>
-  )
+  );
 }
