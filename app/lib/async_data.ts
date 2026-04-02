@@ -1,53 +1,78 @@
 import axiosInstance from "./axios";
-// import Cookies from "js-cookie";
-const serverConfig={
-    base_Url:"https://beegee-backend-1.onrender.com/api"
+import Cookies from "js-cookie";
+const serverConfig = {
+  base_Url: "https://beegee-backend-1.onrender.com/api",
+};
+function getCookie(name: string) {
+  return Cookies.get(name);
 }
+const signedCookies1 = {
+  accessToken: getCookie("accessToken"),
+  refreshToken: getCookie("refreshToken"),
+};
+const signedCookies = JSON.stringify(signedCookies1);
 
-export const getAllProducts=async ()=> {
-    try {
-        const products = await axiosInstance.post(`/v1/products/category/?search=`);
-        const data = await products.data;
-        if (!data) throw Error
-        return data;
-    } catch (error) {
-        console.error("Error fetching products:", error);
-        throw error;
-    }
-   
-}
-export const getAllOrders=async ()=> {
-    try {
-        const orders = await axiosInstance.post(`/v1/orders/showAllMyOrders`);
-        const data = await orders.data;
-        if (!data) throw Error
-        return data;
-    } catch (error) {
-        console.error("Error fetching orders:", error);
-        throw error;
-    }
-   
-}
-export const getAuthenticatedUser=async ({ phoneNumber, password }: { phoneNumber: string; password: string })=> {
-    try {
-        const user = await axiosInstance.post(`/v1/auth/login`, {
-            phoneNumber,
-            password,
-            // matricNumber:matric.toLowerCase()
-        })
-        const data = await user.data;
-        if (!data) throw Error
-        return data;
-        } catch (error) {
-            console.error("Error fetching authenticated user:", error);
-            throw error;
-        }
-}
+export const getAllProducts = async (searchparam: string) => {
+  try {
+    const products = await axiosInstance.post(`/v1/products/category/?search=${searchparam}`);
+    const data = await products.data;
+    if (!data) throw Error;
+    return data;
+  } catch (error) {
+    console.error("Error fetching products:", error);
+    throw error;
+  }
+};
+export const getAllOrders = async () => {
+  try {
+    const orders = await axiosInstance.post(`/v1/orders/showAllMyOrders`);
+    const data = await orders.data;
+    if (!data) throw Error;
+    return data;
+  } catch (error) {
+    console.error("Error fetching orders:", error);
+    throw error;
+  }
+};
+export const getLoggedinUser = async ({
+  phoneNumber,
+  password,
+}: {
+  phoneNumber: string;
+  password: string;
+}) => {
+  try {
+    const user = await axiosInstance.post(`/v1/auth/login`, {
+      phoneNumber,
+      password,
+      // matricNumber:matric.toLowerCase()
+    });
+    const data = await user.data;
+    if (!data) throw Error;
+    return data;
+  } catch (error) {
+    console.error("Error fetching authenticated user:", error);
+    throw error;
+  }
+};
 
+export const getAuthenticatedUser = async () => {
+  try {
+    const user = await axiosInstance.post(`/v1/auth`, {
+      signedCookies,
+    });
+    const data = await user.data;
+    if (!data) throw Error;
+    return data;
+  } catch (error) {
+    console.error("Error fetching authenticated user:", error);
+    throw error;
+  }
+};
 
-const signUp = async (FormData:any) => {
-  const refreshToken = 'Cookies.get("RFTFL");'
-  const accessToken = 'Cookies.get("ACTFL");'
+const signUp = async (FormData: any) => {
+  const refreshToken = 'Cookies.get("RFTFL");';
+  const accessToken = 'Cookies.get("ACTFL");';
   const signedCookies = {
     refreshToken,
     accessToken,
@@ -68,4 +93,4 @@ const signUp = async (FormData:any) => {
     console.log(error);
     return undefined;
   }
-}
+};
