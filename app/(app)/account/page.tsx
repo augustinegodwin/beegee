@@ -146,7 +146,7 @@ export default function Page() {
                 <div className="flex-1 flex flex-col gap-5">
                   <div className="flex-1 flex flex-col sm:flex-row gap-5">
                     {/* Account Card */}
-                    <div className="flex-1 h-fit rounded-[30px] bg-(--green) border border-gray-200 p-1.5">
+                    <div className="flex-1 h-fit rounded-[30px] bg-(--green) border border-gray-200 p-1">
                       <div className="py-2 px-5">
                         <p className="text-base text-center leading-5 text-white title-font">
                           Account balance
@@ -169,7 +169,7 @@ export default function Page() {
                       </div>
                     </div>
                     {/* dept Card */}
-                    <div className="flex-1 h-fit rounded-[30px] bg-(--warning) border border-gray-200 p-1.5">
+                    <div className="flex-1 h-fit rounded-[30px] bg-(--warning) border border-gray-200 p-1">
                       <div className="py-2 px-5">
                         <p className="text-base text-center leading-5 text-white title-font">
                           Money Owing

@@ -21,7 +21,7 @@ export default function Store({ products }: pageProps) {
                 buttonValue='View All products'
                 buttonAction='/store'
             />
-             <div className="w-full grid grid-cols-2 lg:grid-cols-4 gap-4">
+             <div className="w-full grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-4">
                 {products.slice(8,16).map((product) => (
                     <ProductCard product={product} key={product.id} />
                 ))}

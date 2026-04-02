@@ -108,7 +108,7 @@ export default function Page() {
                   <Image src={category} alt="category" className="size-6" />
                 </button>
               </div>
-              <div className="w-fit hidden lg:flex flex-row gap-4">
+              <div className="w-fit hidden lg:flex flex-row gap-3 lg:gap-4">
                 {filterItems.map((item) => (
                   <FilterCard title={item.title} active={item.active} />
                 ))}
