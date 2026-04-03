@@ -1,10 +1,11 @@
 import axiosInstance from "./axios";
-import Cookies from "js-cookie";
+// import Cookies from "js-cookie";
 const serverConfig = {
   base_Url: "https://beegee-backend-1.onrender.com/api",
 };
 function getCookie(name: string) {
-  return Cookies.get(name);
+  return  "namefkkkkfkk"
+//   "Cookies.get(name);"
 }
 const signedCookies1 = {
   accessToken: getCookie("accessToken"),
