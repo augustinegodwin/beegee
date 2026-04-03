@@ -14,8 +14,8 @@ export default function Home() {
     loading,
     refetch,
   } = useFetch({
-    fn: getAllProducts, // Your API function
-    // params: { category: 'electronics' }
+    fn: (params) => getAllProducts(params.searchparam || ""),
+    params: { searchparam: "" },
   });
   if (loading) {
     
