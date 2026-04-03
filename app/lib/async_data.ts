@@ -52,7 +52,7 @@ export const getLoggedinUser = async ({
     return data;
   } catch (error) {
     console.error("Error fetching authenticated user:", error);
-    throw error;
+    throw error; 
   }
 };
 
