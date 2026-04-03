@@ -12,7 +12,7 @@ export const useAppstate = create<AppState>((set) => ({
     // orders:[],
     fetchProducts:async ()=> {
         try {
-                const products=await getAllProducts()
+                const products=await getAllProducts("")
                 set({products})
             } catch (error) {
                 console.error("Error fetching products:", error);
