@@ -66,8 +66,8 @@ export default function Page() {
     loading,
     refetch,
   } = useFetch({
-    fn: getAllProducts, // Your API function
-    // params: { category: 'electronics' }
+    fn: (params) => getAllProducts(params.searchparam || ""),
+    params: { searchparam: "" },
   });
   const handleOpenProduct = () => {
     setSelectedProduct(o)
